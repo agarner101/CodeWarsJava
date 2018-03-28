@@ -26,6 +26,25 @@ package credit_card_mask;
 public class CreditCardMask {
 
     /**
+     * Attempt 2.
+     * Uses regex, removes loop
+     */
+    public static String maskify2(String str) {
+        //If size 4 or less, should return entire input
+        if (str.length() <= 4) return str;
+        //Pull out text that should be visible
+        String visibleText = str.substring(str.length() - 4, str.length());
+        //Pull out text to hash
+        String hashText = str.substring(0, str.length() - 4);
+        //Use regex to replace all characters with hash
+        //noinspection ReplaceAllDot -- replacing all characters is desired
+        hashText = hashText.replaceAll(".", "#");
+        //Append visible text to hash text to put the two back together.
+        return hashText.concat(visibleText);
+
+    }
+
+    /**
      * Attempt 1
      */
     public static String maskify1(String str) {
