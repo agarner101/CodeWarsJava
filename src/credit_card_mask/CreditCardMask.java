@@ -41,7 +41,6 @@ public class CreditCardMask {
         hashText = hashText.replaceAll(".", "#");
         //Append visible text to hash text to put the two back together.
         return hashText.concat(visibleText);
-
     }
 
     /**
