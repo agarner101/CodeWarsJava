@@ -11,7 +11,7 @@ package phone_number;
  * <p>
  * The returned format must be correct in order to complete this challenge.
  * Don't forget the space after the closing parentheses!
- *
+ * <p>
  * http://www.codewars.com/kata/525f50e3b73515a6db000b83/train/java
  * Created by andrewgarner on 3/27/18.
  */
