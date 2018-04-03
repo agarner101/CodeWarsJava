@@ -15,7 +15,7 @@ package cartesia_walk;
  * <p>
  * Created by andrewgarner on 4/2/18.
  */
-public class CartesianWalk {
+class CartesianWalk {
 
     /**
      * Solution 0
