@@ -4,6 +4,7 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 /**
+ * Tests {@link Freddy}
  * Created by andrewgarner on 4/3/18.
  */
 public class FreddyTest extends TestCase {
