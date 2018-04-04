@@ -1,6 +1,6 @@
 # Code Wars Java
 Code Wars attempts and solutions
-#### Total Solved: 5
+#### Total Solved: 6
 
 ## History
 ##### [Exes and Ohs](https://www.codewars.com/kata/55908aad6620c066bc00002a)
@@ -8,3 +8,4 @@ Code Wars attempts and solutions
 ##### [Credit Card Masker](http://www.codewars.com/kata/5412509bd436bd33920011bc/train/java)
 ##### [Digital Root](https://www.codewars.com/kata/541c8630095125aba6000c00/train/java)
 ##### [Freddy](https://www.codewars.com/kata/fat-fingers/train/java)
+##### [Find Odd Number](https://www.codewars.com/kata/find-the-odd-int/train/java)
