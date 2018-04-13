@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
  * Given nums1 = [1, 7, 11], nums2 = [2, 4, 6], k = 3
  * Return: [1, 2], [1, 4], [1,6]
  * <p>
+ * See {@link SmallestPairsTest} for unit tests for the 3 examples given in problem.
  * Andrew Garner 2018.
  */
 public class SmallestPairs {
