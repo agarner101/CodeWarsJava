@@ -24,12 +24,14 @@ public class SmallestPairs {
 
     public static void main(String[] args) {
 
-        //Example 2
+        //Values taken from Example 2
         int[] nums1 = new int[]{1, 2};
         int[] nums2 = new int[]{3, 4};
         int k = 3;
 
-        for (int[] val : smallestPairs0(nums1, nums2, k)) {
+        List<int[]> result = smallestPairs0(nums1, nums2, k);
+
+        for (int[] val : result) {
             System.out.println(Arrays.toString(val));
         }
     }
