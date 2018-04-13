@@ -30,7 +30,7 @@ public class SmallestPairsTest extends TestCase {
     /**
      * Example 1 Test
      */
-    public void testSmallestPairsExample1() throws Exception {
+    public void testExample1() throws Exception {
         int[] nums1 = new int[]{1, 7, 11};
         int[] nums2 = new int[]{2, 4, 6};
         int k = 3;
@@ -50,7 +50,7 @@ public class SmallestPairsTest extends TestCase {
     /**
      * Example 2 Test
      */
-    public void testSmallestPairsExample2() throws Exception {
+    public void testExample2() throws Exception {
         int[] nums1 = new int[]{1, 1, 2};
         int[] nums2 = new int[]{1, 2, 3};
         int k = 2;
@@ -69,13 +69,65 @@ public class SmallestPairsTest extends TestCase {
     /**
      * Example 3 Test
      */
-    public void testSmallestPairsExample3() throws Exception {
+    public void testExample3() throws Exception {
         int[] nums1 = new int[]{1, 2};
         int[] nums2 = new int[]{3};
         int k = 3;
 
         int[][] expectedArray = new int[][] {
                 new int[] {1, 3},
+                new int[] {2, 3},
+        };
+
+        List<int[]> expected = Arrays.asList(expectedArray);
+        List<int[]> actual = SmallestPairs.smallestPairs0(nums1, nums2, k);
+
+        testResult(expected, actual);
+    }
+
+    /**
+     * Tests empty inputs
+     */
+    public void testEmptyNums() throws Exception {
+        int[] nums1 = new int[]{};
+        int[] nums2 = new int[]{};
+        int k = 3;
+
+        int[][] expectedArray = new int[][] {};
+
+        List<int[]> expected = Arrays.asList(expectedArray);
+        List<int[]> actual = SmallestPairs.smallestPairs0(nums1, nums2, k);
+
+        testResult(expected, actual);
+    }
+
+    /**
+     * Tests Negative K
+     */
+    public void testNegativeK() throws Exception {
+        int[] nums1 = new int[]{1, 2};
+        int[] nums2 = new int[]{3};
+        int k = -1;
+
+        int[][] expectedArray = new int[][] {};
+
+        List<int[]> expected = Arrays.asList(expectedArray);
+        List<int[]> actual = SmallestPairs.smallestPairs0(nums1, nums2, k);
+
+        testResult(expected, actual);
+    }
+
+    /**
+     * Tests Negative value in nums1
+     */
+    public void testNegativeValue() throws Exception {
+        int[] nums1 = new int[]{-1, 2};
+        int[] nums2 = new int[]{3, 4};
+        int k = 3;
+
+        int[][] expectedArray = new int[][] {
+                new int[] {-1, 3},
+                new int[] {-1, 4},
                 new int[] {2, 3},
         };
 
