@@ -25,11 +25,11 @@ public class SmallestPairs {
     public static void main(String[] args) {
 
         //Example 2
-        int[] arr1 = new int[]{1, 2};
-        int[] arr2 = new int[]{3, 4};
+        int[] nums1 = new int[]{1, 2};
+        int[] nums2 = new int[]{3, 4};
         int k = 3;
 
-        for (int[] val : smallestPairs0(arr1, arr2, k)) {
+        for (int[] val : smallestPairs0(nums1, nums2, k)) {
             System.out.println(Arrays.toString(val));
         }
     }
@@ -41,7 +41,7 @@ public class SmallestPairs {
         List<Integer> list1 = Arrays.stream(nums1).boxed().collect(Collectors.toList());
         List<Integer> list2 = Arrays.stream(nums2).boxed().collect(Collectors.toList());
         return list1.stream()
-                // Create pairs of arr1 and arr2 values
+                // Create pairs of nums1 and nums2 values
                 .flatMap(i -> list2.stream().map(j -> new int[]{i, j}))
                 // Sort based on sum of a pair
                 .sorted((Comparator.comparingInt(o -> o[0] + o[1])))
@@ -52,9 +52,9 @@ public class SmallestPairs {
     }
 
     /**
-     * Given two arrays {@code arr1} and {@code arr2}, returns {@code k} number of pairs of values from the two arrays
+     * Given two arrays {@code nums1} and {@code nums2}, returns {@code k} number of pairs of values from the two arrays
      * that have the lowest combined sum, in ascending order.
-     * Returned is a list of pairs in the form (u, v), where u is an element of arr1 and v is an element of arr2.
+     * Returned is a list of pairs in the form (u, v), where u is an element of nums1 and v is an element of nums2.
      * First Solution.
      */
     static List<int[]> smallestPairs0(int[] nums1, int[] nums2, int k) {
@@ -63,7 +63,7 @@ public class SmallestPairs {
         int totalPairCount = nums1.length * nums2.length;
         k = Math.min(k, totalPairCount); //Don't attempt to find more pairs than total
 
-        // For each element in arr1, keep track of its current position traversing arr2 for pairs
+        // For each element in nums1, keep track of its current position traversing nums2 for pairs
         int[] positionI = new int[nums1.length];
 
         while (k > 0) {
@@ -85,11 +85,11 @@ public class SmallestPairs {
                 }
             }
 
-            // Create a pair using the minimum index and its position in arr2 traversal
+            // Create a pair using the minimum index and its position in nums2 traversal
             int[] minPair = new int[]{nums1[minimumIndex], nums2[positionI[minimumIndex]]};
             retList.add(minPair);
 
-            // Move position of arr2 traversal forward, effectively removing that value from further consideration
+            // Move position of nums2 traversal forward, effectively removing that value from further consideration
             positionI[minimumIndex]++;
             k--;
         }
